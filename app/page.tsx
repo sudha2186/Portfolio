@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import { motion } from 'framer-motion'
 import { NavBar } from '@/components/portfolio/navbar'
@@ -26,6 +25,8 @@ import {
 import { SiCplusplus } from 'react-icons/si'
 import { TbLetterC } from 'react-icons/tb'
 import EducationSection from '@/components/portfolio/education-section'
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const SKILLS = {
   Frontend: [
@@ -64,34 +65,34 @@ const PROJECTS = [
     title: 'TeenBuddy AI',
     description: 'AI-powered chatbot that helps students with study guidance, exam preparation, and career support using Gemini API with an interactive and user-friendly interface.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Python', 'Streamlit', 'Gemini API'],
-    image: '/teenbuddy.png',
+    image: `${basePath}/teenbuddy.png`,
     githubUrl: 'https://github.com/sudha2186/TeenBuddyAI_Agentic_model',
   },
   {
     title: 'Pet Adoption System',
     description: 'Web-based platform to connect adopters with pets, including user registration, listings, and request management for a smooth adoption process.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Python', 'Flask', 'MySQL'],
-    image: '/pet.jpeg',
+    image: `${basePath}/pet.jpeg`,
     githubUrl: 'https://github.com/sudha2186/pet-Adoption-System-PawConnect',
   },
   {
     title: 'EduScheduler',
     description: 'AI-based timetable scheduling system that generates optimized academic schedules while minimizing conflicts and improving resource allocation.',
     technologies: ['HTML', 'Tailwind CSS', 'JavaScript', 'Next Js', 'React', 'Node JS', 'MongoDB'],
-    image: '/tt.png',
+    image: `${basePath}/tt.png`,
     githubUrl: 'https://github.com/example',
   },
   {
     title: 'Automatic Irrigation System',
     description: 'IoT-based system that automates watering using soil moisture sensors to optimize water usage and support plant growth.',
     technologies: ['Arduino', 'Sensors', 'Embedded C'],
-    image: '/irrigation.png',
+    image: `${basePath}/irrigation.png`,
   },
   {
     title: 'Digital Thermometer',
     description: 'Hardware-based system to measure and display temperature in real-time using sensors and microcontroller integration.',
     technologies: ['Arduino', 'Temperature Sensor', 'Embedded C'],
-    image: '/thermo.png',
+    image: `${basePath}/thermo.png`,
   },
 ]
 
@@ -231,7 +232,7 @@ export default function Home() {
                 View My Work...
               </motion.a>
               <motion.a
-                href="/resume.pdf"
+                href={`${basePath}/resume.pdf`}
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -245,7 +246,7 @@ export default function Home() {
             {/* PROFILE IMAGE */}
             <div className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-4 border-purple-500 shadow-xl hover:scale-105 transition-transform duration-300 hover:shadow-purple-500/50">
               <motion.img
-                src="/profile.jpeg"
+                src={`${basePath}/profile.jpeg`}
                 alt="profile"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
